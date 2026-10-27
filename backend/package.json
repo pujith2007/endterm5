@@ -1,5 +1,5 @@
 {
-  "name": "crewup-server",
+  "name": "crewup-backend",
   "version": "1.0.0",
   "description": "Backend API for CrewUp - Student Project Team Finder & Collaboration Platform",
   "main": "src/server.js",

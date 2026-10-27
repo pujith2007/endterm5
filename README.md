@@ -4,10 +4,21 @@
 [![Vite](https://img.shields.io/badge/Frontend-Vite%20%2B%20React%2018-61dafb.svg)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS%20v3-38bdf8.svg)](https://tailwindcss.com/)
 [![Node & Express](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-green.svg)](https://nodejs.org/)
-[![Database](https://img.shields.io/badge/Database-MongoDB%20%2B%20Mongoose-47a248.svg)](https://www.mongodb.com/)
+[![Database](https://img.shields.io/badge/Database-MongoDB%20Atlas%20%2B%20Mongoose-47a248.svg)](https://www.mongodb.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **CrewUp** is a full-stack MERN web application engineered for university students to pitch project concepts, discover complementary teammates through smart skill matching, review team applications, and collaborate in real-time Kanban workspaces.
+
+---
+
+## 📑 Project Submission Metadata
+
+```text
+Project Name: CrewUp — Student Project Team Finder & Collaboration Platform
+Student Name: Srivasthav Sarathy
+Problem Statement: University students struggle to discover hackathon and capstone teammates with complementary technical skills, track team applications, and manage task collaboration in a single organized workspace.
+Tech Stack: MongoDB, Express.js, React.js (Vite), Node.js, Tailwind CSS, JWT Authentication, Context API, Axios
+```
 
 ---
 
@@ -19,16 +30,16 @@
 - **Private Agile Workspace**: Real-time project collaboration boards with 3-column Kanban sprint management (*To Do*, *In Progress*, *Done*), member task assignments, priority labels, due date tracking, and overall sprint progress meters.
 - **Instant In-App Notifications**: Real-time activity alerts for project owners when applications arrive, for applicants when accepted/rejected, and for members when assigned tasks.
 - **Secure Authentication & Profiles**: Custom JWT authentication with bcrypt password hashing, input validation, and customizable student profiles with colleges, technical skills, and GitHub links.
-- **Zero-Friction Zero-Config Database**: Seamlessly connects to any local/cloud MongoDB or automatically boots an embedded in-memory MongoDB fallback with pre-seeded demo data on first start.
+- **Resilient MongoDB Configuration**: Configured for MongoDB Atlas with user credentials, featuring an automatic embedded fallback with pre-seeded demo data for immediate zero-config evaluation.
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ Ordered Project Structure
 
 ```
 mern_end_term_project/
-├── client/                     # Vite + React 18 + Tailwind CSS
-│   ├── public/                 # Static assets & icons
+├── frontend/                   # All Frontend Source Code (React 18 + Vite + Tailwind)
+│   ├── public/                 # Static assets & SVG icons
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── common/         # Navbar, Footer, ProtectedRoute, Modal, Badges, SkillTags
@@ -55,12 +66,13 @@ mern_end_term_project/
 │   │   ├── main.jsx                    # React entry root
 │   │   └── index.css                   # Tailwind base & glassmorphic utilities
 │   ├── tailwind.config.js
-│   └── vite.config.js                  # Dev server with /api proxy to port 5000
+│   ├── vite.config.js                  # Dev server with /api proxy to port 5000
+│   └── package.json
 │
-├── server/                     # Node.js + Express + Mongoose API
+├── backend/                    # All Backend Source Code (Node.js + Express + Mongoose)
 │   ├── src/
 │   │   ├── config/
-│   │   │   └── db.js                   # Resilient MongoDB connector (with embedded fallback)
+│   │   │   └── db.js                   # Resilient MongoDB connector (Atlas + Embedded fallback)
 │   │   ├── controllers/
 │   │   │   ├── authController.js       # Register, login, getMe, updateProfile
 │   │   │   ├── projectController.js    # CRUD, search, filter, recommendations
@@ -87,10 +99,11 @@ mern_end_term_project/
 │   │   │   └── seedService.js          # Reusable seed runner with demo datasets
 │   │   ├── seed.js                     # Standalone CLI seeder
 │   │   └── server.js                   # Express app initialization
+│   ├── .env                            # Backend configuration with MongoDB credentials
 │   ├── .env.example
 │   └── package.json
 │
-├── package.json                # Monorepo root scripts
+├── package.json                # Monorepo root scripts (dev:backend, dev:frontend)
 └── README.md
 ```
 
@@ -102,50 +115,51 @@ mern_end_term_project/
 
 - **Node.js** v18+ (tested on Node v20/v22)
 - **npm** v9+
-- *(Optional)* Local or cloud MongoDB instance (if not installed, CrewUp automatically spins up an embedded in-memory MongoDB instance with pre-seeded demo data!).
 
 ### 1. Install Dependencies
 
-In the root repository folder, run:
+In the root repository folder:
 
 ```bash
 npm run install:all
 ```
 
-*(This runs `npm install` concurrently in both `server/` and `client/`)*
+*(Installs dependencies across both `backend/` and `frontend/`)*
 
-### 2. Configure Environment Variables
+### 2. Database & Environment Configuration
 
-The project comes pre-configured with functional defaults. You can copy the example files:
+The backend environment file is configured in `backend/.env`:
 
-```bash
-cp server/.env.example server/.env
-cp client/.env.example client/.env
-```
-
-**`server/.env` defaults:**
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/crewup
+
+# MongoDB Configuration
+MONGODB_USER=srivasthav2007_db_user
+MONGODB_PASS=ohYO0lAh572onLfb
+MONGODB_URI=mongodb+srv://srivasthav2007_db_user:ohYO0lAh572onLfb@<cluster-host>/crewup?retryWrites=true&w=majority
+
+# JWT & Secrets
 JWT_SECRET=supersecret_crewup_jwt_token_key_2026_dev
 NODE_ENV=development
 CLIENT_URL=http://localhost:5173
 ```
 
+> **Note on MongoDB**: If a remote cluster host is provided in `backend/.env`, CrewUp connects to it directly. If the cluster is unreachable or no local daemon is running, CrewUp's connector automatically initializes a local embedded MongoDB instance with pre-seeded demo data, guaranteeing **zero crashes and instantaneous testability**!
+
 ### 3. Run Development Servers
 
-Start the backend and frontend in parallel terminals:
+Start the backend and frontend:
 
 **Terminal 1 — Backend:**
 ```bash
-npm run dev:server
-# Server runs on http://localhost:5000
+npm run dev:backend
+# API server running on http://localhost:5000
 ```
 
 **Terminal 2 — Frontend:**
 ```bash
-npm run dev:client
-# Frontend runs on http://localhost:5173
+npm run dev:frontend
+# Vite React app running on http://localhost:5173
 ```
 
 Open your browser to: **[http://localhost:5173](http://localhost:5173)**.
@@ -170,7 +184,7 @@ The database comes pre-seeded with realistic student accounts spanning multiple 
 
 ## 🧠 Smart Skill Matching Algorithm
 
-Unlike basic keyword searches, CrewUp implements algorithmic skill compatibility calculation in `server/src/services/skillMatcher.js`:
+Unlike basic keyword searches, CrewUp implements algorithmic skill compatibility calculation in `backend/src/services/skillMatcher.js`:
 
 1. **Normalization & Canonical Aliasing**:
    - Matches synonymous technologies seamlessly (e.g. `react.js` $\leftrightarrow$ `react`, `node` $\leftrightarrow$ `node.js` $\leftrightarrow$ `nodejs`, `mongo` $\leftrightarrow$ `mongodb`, `py` $\leftrightarrow$ `python`).
@@ -219,7 +233,7 @@ Unlike basic keyword searches, CrewUp implements algorithmic skill compatibility
 | `GET` | `/api/tasks/project/:projectId`| Private (Team) | Fetch tasks for private team workspace |
 | `POST` | `/api/tasks` | Private (Team) | Create task with assignee, priority, and due date |
 | `PUT` | `/api/tasks/:id` | Private (Team) | Update task title, status (To Do / In Progress / Done) |
-| `DELETE`| `/api/tasks/:id` | Private (Creator/Owner)| Delete task from workspace |
+| `DELETE`| `/api/tasks/:id` | Private (Team) | Delete task from workspace |
 
 ### Notifications (`/api/notifications`)
 | Method | Endpoint | Access | Description |
@@ -246,23 +260,23 @@ Unlike basic keyword searches, CrewUp implements algorithmic skill compatibility
 
 ## 🚀 Production Deployment Guidance
 
-### Deploying the Backend (e.g. Render, Railway, or VPS)
-1. Push your repository to GitHub.
-2. Create a new Web Service pointing to the `server/` directory.
+### Deploying the Backend (Render / Railway / Heroku)
+1. Push repository to GitHub.
+2. In host dashboard, create a Web Service pointing to `backend/`.
 3. Build Command: `npm install`
 4. Start Command: `npm start`
-5. Configure environment variables in the host dashboard:
-   - `MONGODB_URI`: Your MongoDB Atlas connection URI (`mongodb+srv://...`)
+5. Configure environment variables:
+   - `MONGODB_URI`: `mongodb+srv://srivasthav2007_db_user:ohYO0lAh572onLfb@<cluster-host>/crewup?retryWrites=true&w=majority`
    - `JWT_SECRET`: A secure random cryptographic secret string
-   - `CLIENT_URL`: Your production frontend URL (e.g. `https://crewup.vercel.app`)
+   - `CLIENT_URL`: Your deployed frontend URL
 
-### Deploying the Frontend (e.g. Vercel or Netlify)
-1. Create a new project in Vercel pointing to the `client/` directory.
+### Deploying the Frontend (Vercel / Netlify)
+1. In Vercel or Netlify, select repository with root pointing to `frontend/`.
 2. Framework Preset: **Vite**
 3. Build Command: `npm run build`
 4. Output Directory: `dist`
-5. Add environment variable:
-   - `VITE_API_URL`: Your deployed backend API URL (e.g. `https://crewup-api.onrender.com/api`)
+5. Environment Variable:
+   - `VITE_API_URL`: Your deployed backend API URL
 
 ---
 
