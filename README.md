@@ -156,7 +156,7 @@ PORT=5000
 # MongoDB Configuration
 MONGODB_USER=srivasthav2007_db_user
 MONGODB_PASS=ohYO0lAh572onLfb
-MONGODB_URI=mongodb+srv://srivasthav2007_db_user:ohYO0lAh572onLfb@<cluster-host>/crewup?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://srivasthav2007_db_user:ohYO0lAh572onLfb@cluster0.mongodb.net/crewup?retryWrites=true&w=majority
 
 # JWT & Secrets
 JWT_SECRET=supersecret_crewup_jwt_token_key_2026_dev
@@ -281,6 +281,8 @@ Unlike basic keyword searches, CrewUp implements algorithmic skill compatibility
 ## 🚀 Production Deployment Guidance
 
 ### Deploying the Backend (Render / Railway / Heroku)
+- **Live Deployed API**: [https://crewup-backend-api.onrender.com](https://crewup-backend-api.onrender.com)
+- **Health Check Endpoint**: [https://crewup-backend-api.onrender.com/api/health](https://crewup-backend-api.onrender.com/api/health)
 1. Push repository to GitHub.
 2. In host dashboard, create a Web Service pointing to `backend/`.
 3. Build Command: `npm install`
@@ -291,12 +293,13 @@ Unlike basic keyword searches, CrewUp implements algorithmic skill compatibility
    - `CLIENT_URL`: Your deployed frontend URL
 
 ### Deploying the Frontend (Vercel / Netlify)
+- **Live Deployed Frontend (Vercel)**: [https://endterm5.vercel.app](https://endterm5.vercel.app)
 1. In Vercel or Netlify, select repository with root pointing to `frontend/`.
 2. Framework Preset: **Vite**
 3. Build Command: `npm run build`
 4. Output Directory: `dist`
 5. Environment Variable:
-   - `VITE_API_URL`: Your deployed backend API URL
+   - `VITE_API_URL`: `https://crewup-backend-api.onrender.com`
 
 ---
 
