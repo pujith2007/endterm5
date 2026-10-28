@@ -3,17 +3,19 @@
 [![Frontend Deployed on Vercel](https://img.shields.io/badge/Frontend-Deployed%20on%20Vercel-black?logo=vercel)](https://endterm5.vercel.app)
 [![MERN Stack](https://img.shields.io/badge/Stack-MERN-6366f1.svg)](https://reactjs.org/)
 [![Database](https://img.shields.io/badge/Database-MongoDB%20Atlas%20%2B%20Mongoose-47a248.svg)](https://www.mongodb.com/)
+[![Google Drive](https://img.shields.io/badge/Project%20Assets-Google%20Drive-4285F4?logo=googledrive&logoColor=white)](https://drive.google.com/drive/folders/1jNcVJYqQbzP041n2h_4qEC4xvn-oRN_F)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **CrewUp** is a full-stack MERN web application engineered for university students to pitch project concepts, discover complementary teammates through smart skill matching, review team applications, and collaborate in real-time Kanban workspaces.
 
 ---
 
-## 🌐 Live Deployment Link
+## 🌐 Live Deployment & Resources
 
-| Component | Platform | Live URL | Status |
+| Resource | Platform | Link | Status |
 | :--- | :--- | :--- | :--- |
 | **Frontend Application** | **Vercel** | [https://endterm5.vercel.app](https://endterm5.vercel.app) | 🟢 Live & Active |
+| **Project Assets (Report, Docs, Demo)** | **Google Drive** | [📁 Open Drive Folder](https://drive.google.com/drive/folders/1jNcVJYqQbzP041n2h_4qEC4xvn-oRN_F) | 🟢 Accessible |
 
 > **Quick Evaluator Demo Credentials:**
 > - **Student 1 (Full-stack):** `alex@student.edu` / `password123`
@@ -26,11 +28,16 @@
 ## 📑 Project Submission Metadata
 
 ```text
-Project Name: CrewUp — Student Project Team Finder & Collaboration Platform
-Student Name: Srivasthav Sarathy
-Problem Statement: University students struggle to discover hackathon and capstone teammates with complementary technical skills, track team applications, and manage task collaboration in a single organized workspace.
-Tech Stack: MongoDB Atlas, Express.js, React.js (Vite), Node.js, Tailwind CSS, JWT Authentication, Context API, Axios
-Frontend Live URL: https://endterm5.vercel.app
+Project Name : CrewUp — Student Project Team Finder & Collaboration Platform
+Student Name : Srivasthav Sarathy
+Problem      : University students struggle to discover hackathon and capstone teammates
+               with complementary technical skills, track team applications, and manage
+               task collaboration in a single organized workspace.
+Tech Stack   : MongoDB Atlas, Express.js, React.js (Vite), Node.js, Tailwind CSS,
+               JWT Authentication, Context API, Axios
+Frontend URL : https://endterm5.vercel.app
+GitHub Repo  : https://github.com/pujith2007/endterm5
+Drive Folder : https://drive.google.com/drive/folders/1jNcVJYqQbzP041n2h_4qEC4xvn-oRN_F
 ```
 
 ---
@@ -141,18 +148,16 @@ npm run install:all
 
 ### 2. Database & Environment Configuration
 
-The backend environment file is configured in `backend/.env`:
+The backend environment file is configured in `backend/.env` (see `backend/.env.example`):
 
 ```env
 PORT=5000
 
 # MongoDB Configuration
-MONGODB_USER=srivasthav2007_db_user
-MONGODB_PASS=ohYO0lAh572onLfb
-MONGODB_URI=mongodb+srv://srivasthav2007_db_user:ohYO0lAh572onLfb@cluster0.mongodb.net/crewup?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-host>/crewup?retryWrites=true&w=majority
 
 # JWT & Secrets
-JWT_SECRET=supersecret_crewup_jwt_token_key_2026_dev
+JWT_SECRET=<your-random-secret>
 NODE_ENV=development
 CLIENT_URL=http://localhost:5173
 ```
@@ -279,7 +284,7 @@ Unlike basic keyword searches, CrewUp implements algorithmic skill compatibility
 3. Build Command: `npm install`
 4. Start Command: `npm start`
 5. Configure environment variables:
-   - `MONGODB_URI`: `mongodb+srv://srivasthav2007_db_user:ohYO0lAh572onLfb@<cluster-host>/crewup?retryWrites=true&w=majority`
+   - `MONGODB_URI`: Your MongoDB Atlas connection string
    - `JWT_SECRET`: A secure random cryptographic secret string
    - `CLIENT_URL`: Your deployed frontend URL
 

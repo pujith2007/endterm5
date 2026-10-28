@@ -1,5 +1,27 @@
-node_modules
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables (never commit secrets)
 .env
-dist
-.DS_Store
+**/.env
+!**/.env.example
+
+# Build output
+dist/
+build/
+**/dist/
+**/build/
+
+# Logs
 *.log
+logs/
+npm-debug.log*
+
+# macOS
+.DS_Store
+
+# Misc / scratch files
+frontend_link.txt
+client/
+server/
