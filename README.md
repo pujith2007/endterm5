@@ -1,8 +1,6 @@
 # CrewUp — Student Project Team Finder & Collaboration Platform
 
 [![Frontend Deployed on Vercel](https://img.shields.io/badge/Frontend-Deployed%20on%20Vercel-black?logo=vercel)](https://endterm5.vercel.app)
-[![Backend Deployed on Render](https://img.shields.io/badge/Backend-Deployed%20on%20Render-46E3B7?logo=render&logoColor=white)](https://crewup-backend-api.onrender.com/api/health)
-[![GitHub Repository](https://img.shields.io/badge/GitHub-pujith2007%2Fendterm5-181717?logo=github)](https://github.com/pujith2007/endterm5)
 [![MERN Stack](https://img.shields.io/badge/Stack-MERN-6366f1.svg)](https://reactjs.org/)
 [![Database](https://img.shields.io/badge/Database-MongoDB%20Atlas%20%2B%20Mongoose-47a248.svg)](https://www.mongodb.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -11,14 +9,11 @@
 
 ---
 
-## 🌐 Live Deployment Links
+## 🌐 Live Deployment Link
 
 | Component | Platform | Live URL | Status |
 | :--- | :--- | :--- | :--- |
 | **Frontend Application** | **Vercel** | [https://endterm5.vercel.app](https://endterm5.vercel.app) | 🟢 Live & Active |
-| **Backend API Service** | **Render** | [https://crewup-backend-api.onrender.com](https://crewup-backend-api.onrender.com) | 🟢 Live & Active |
-| **API Health Check** | **Render** | [https://crewup-backend-api.onrender.com/api/health](https://crewup-backend-api.onrender.com/api/health) | 🟢 Healthy (`200 OK`) |
-| **GitHub Repository** | **GitHub** | [https://github.com/pujith2007/endterm5](https://github.com/pujith2007/endterm5) | 🟢 Public Repository |
 
 > **Quick Evaluator Demo Credentials:**
 > - **Student 1 (Full-stack):** `alex@student.edu` / `password123`
@@ -36,8 +31,6 @@ Student Name: Srivasthav Sarathy
 Problem Statement: University students struggle to discover hackathon and capstone teammates with complementary technical skills, track team applications, and manage task collaboration in a single organized workspace.
 Tech Stack: MongoDB Atlas, Express.js, React.js (Vite), Node.js, Tailwind CSS, JWT Authentication, Context API, Axios
 Frontend Live URL: https://endterm5.vercel.app
-Backend Live URL: https://crewup-backend-api.onrender.com
-GitHub Repository: https://github.com/pujith2007/endterm5
 ```
 
 ---
@@ -281,8 +274,6 @@ Unlike basic keyword searches, CrewUp implements algorithmic skill compatibility
 ## 🚀 Production Deployment Guidance
 
 ### Deploying the Backend (Render / Railway / Heroku)
-- **Live Deployed API**: [https://crewup-backend-api.onrender.com](https://crewup-backend-api.onrender.com)
-- **Health Check Endpoint**: [https://crewup-backend-api.onrender.com/api/health](https://crewup-backend-api.onrender.com/api/health)
 1. Push repository to GitHub.
 2. In host dashboard, create a Web Service pointing to `backend/`.
 3. Build Command: `npm install`
