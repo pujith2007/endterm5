@@ -1,13 +1,30 @@
 # CrewUp — Student Project Team Finder & Collaboration Platform
 
+[![Frontend Deployed on Vercel](https://img.shields.io/badge/Frontend-Deployed%20on%20Vercel-black?logo=vercel)](https://endterm5.vercel.app)
+[![Backend Deployed on Render](https://img.shields.io/badge/Backend-Deployed%20on%20Render-46E3B7?logo=render&logoColor=white)](https://crewup-backend-api.onrender.com/api/health)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-pujith2007%2Fendterm5-181717?logo=github)](https://github.com/pujith2007/endterm5)
 [![MERN Stack](https://img.shields.io/badge/Stack-MERN-6366f1.svg)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Frontend-Vite%20%2B%20React%2018-61dafb.svg)](https://vitejs.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS%20v3-38bdf8.svg)](https://tailwindcss.com/)
-[![Node & Express](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-green.svg)](https://nodejs.org/)
 [![Database](https://img.shields.io/badge/Database-MongoDB%20Atlas%20%2B%20Mongoose-47a248.svg)](https://www.mongodb.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **CrewUp** is a full-stack MERN web application engineered for university students to pitch project concepts, discover complementary teammates through smart skill matching, review team applications, and collaborate in real-time Kanban workspaces.
+
+---
+
+## 🌐 Live Deployment Links
+
+| Component | Platform | Live URL | Status |
+| :--- | :--- | :--- | :--- |
+| **Frontend Application** | **Vercel** | [https://endterm5.vercel.app](https://endterm5.vercel.app) | 🟢 Live & Active |
+| **Backend API Service** | **Render** | [https://crewup-backend-api.onrender.com](https://crewup-backend-api.onrender.com) | 🟢 Live & Active |
+| **API Health Check** | **Render** | [https://crewup-backend-api.onrender.com/api/health](https://crewup-backend-api.onrender.com/api/health) | 🟢 Healthy (`200 OK`) |
+| **GitHub Repository** | **GitHub** | [https://github.com/pujith2007/endterm5](https://github.com/pujith2007/endterm5) | 🟢 Public Repository |
+
+> **Quick Evaluator Demo Credentials:**
+> - **Student 1 (Full-stack):** `alex@student.edu` / `password123`
+> - **Student 2 (AI/ML):** `sarah@student.edu` / `password123`
+> - **Student 3 (Mobile):** `marcus@student.edu` / `password123`
+> *(One-click demo buttons are also available on the Login screen!)*
 
 ---
 
@@ -17,7 +34,10 @@
 Project Name: CrewUp — Student Project Team Finder & Collaboration Platform
 Student Name: Srivasthav Sarathy
 Problem Statement: University students struggle to discover hackathon and capstone teammates with complementary technical skills, track team applications, and manage task collaboration in a single organized workspace.
-Tech Stack: MongoDB, Express.js, React.js (Vite), Node.js, Tailwind CSS, JWT Authentication, Context API, Axios
+Tech Stack: MongoDB Atlas, Express.js, React.js (Vite), Node.js, Tailwind CSS, JWT Authentication, Context API, Axios
+Frontend Live URL: https://endterm5.vercel.app
+Backend Live URL: https://crewup-backend-api.onrender.com
+GitHub Repository: https://github.com/pujith2007/endterm5
 ```
 
 ---
